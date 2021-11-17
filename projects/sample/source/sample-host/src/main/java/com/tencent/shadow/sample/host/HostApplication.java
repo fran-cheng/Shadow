@@ -23,6 +23,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.StrictMode;
+import android.util.Log;
 import android.webkit.WebView;
 
 import com.tencent.shadow.core.common.LoggerFactory;
@@ -59,6 +60,7 @@ public class HostApplication extends Application {
         PluginHelper.getInstance().init(this);
 
         HostUiLayerProvider.init(this);
+        Log.e("clm","HostApplication");
     }
     private static void setWebViewDataDirectorySuffix(){
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {

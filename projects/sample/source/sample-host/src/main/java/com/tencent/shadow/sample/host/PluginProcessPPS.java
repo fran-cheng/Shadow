@@ -37,7 +37,16 @@ public class PluginProcessPPS extends PluginProcessService {
             @Override
             public void afterLoadPlugin(String partKey, ApplicationInfo applicationInfo, ClassLoader pluginClassLoader, Resources pluginResources) {
                 Log.d("PluginProcessPPS", "afterLoadPlugin(" + partKey + "," + applicationInfo.className + "{metaData=" + applicationInfo.metaData + "}" + "," + pluginClassLoader + ")");
+                Log.e("clm", "afterLoadPlugin");
+                sClassLoader = pluginClassLoader;
+                printlin();
             }
         });
+    }
+
+    private static ClassLoader sClassLoader;
+
+    public static void printlin() {
+        Log.e("clm", "set classLoader " + sClassLoader);
     }
 }

@@ -75,6 +75,7 @@ public class MainActivity extends Activity {
 
                 }
                 startActivity(intent);
+                PluginProcessPPS.printlin();
             }
         });
         rootView.addView(startPluginButton);

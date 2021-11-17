@@ -21,6 +21,7 @@ package com.tencent.shadow.sample.plugin.loader;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.res.Resources;
+import android.util.Log;
 
 import com.tencent.shadow.core.common.InstalledApk;
 import com.tencent.shadow.core.load_parameters.LoadParameters;
@@ -71,6 +72,7 @@ public class SamplePluginLoader extends ShadowPluginLoader {
                     PluginClassLoader classLoader = pluginParts.getClassLoader();
                     Resources resources = pluginParts.getResources();
 
+                    Log.e("clm", "SamplePluginLoader");
                     LoadPluginCallback.getCallback().afterLoadPlugin(partKey, applicationInfo, classLoader, resources);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
